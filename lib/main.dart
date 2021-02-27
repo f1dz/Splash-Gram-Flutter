@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'main_screen.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -9,9 +11,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'Splash Gram',
-        theme: ThemeData.dark(),
-        home: Center(
-          child: Text('Splash Gram'),
-        ));
+        theme: ThemeData.light(),
+        darkTheme: ThemeData.dark(),
+        themeMode: ThemeMode.system,
+        home: MainScreen());
   }
 }
