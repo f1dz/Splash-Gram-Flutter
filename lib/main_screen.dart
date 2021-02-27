@@ -16,7 +16,10 @@ class _State extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Splash Gram'),
+        title: Text(
+          'Splash Gram',
+          style: TextStyle(fontFamily: 'Instagram'),
+        ),
       ),
       body: Center(
         child: FutureBuilder<ResponseUnsplash>(

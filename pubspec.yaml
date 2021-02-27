@@ -25,3 +25,8 @@ flutter:
   assets:
     - assets/json/
     - assets/images/
+
+  fonts:
+    - family: Instagram
+      fonts:
+        - asset: fonts/instagram_normal.ttf
