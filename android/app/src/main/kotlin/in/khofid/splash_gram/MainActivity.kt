@@ -1,0 +1,6 @@
+package in.khofid.splash_gram
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}
