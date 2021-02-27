@@ -12,13 +12,16 @@ dependencies:
   flutter:
     sdk: flutter
 
-
   cupertino_icons: ^1.0.0
+  intl: ^0.16.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
 flutter:
-
   uses-material-design: true
+
+  assets:
+    - assets/json/
+    - assets/images/
