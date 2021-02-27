@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -48,7 +49,8 @@ class _State extends State<MainScreen> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 CircleAvatar(
-                                  backgroundImage: NetworkImage(unsplash.user.profileImage.medium),
+                                  backgroundImage:
+                                      CachedNetworkImageProvider(unsplash.user.profileImage.medium),
                                   radius: 28,
                                 ),
                                 Padding(
@@ -73,7 +75,10 @@ class _State extends State<MainScreen> {
                               ],
                             ),
                           ),
-                          Image.network(unsplash.urls.regular),
+                          CachedNetworkImage(
+                            imageUrl: unsplash.urls.regular,
+                            placeholder: (context, url) => Center(child: CircularProgressIndicator()),
+                          ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Text(

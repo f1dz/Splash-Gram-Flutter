@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -17,7 +18,10 @@ class DetailScreen extends StatelessWidget {
         children: [
           Stack(
             children: [
-              Image.network(unsplash.urls.regular),
+              CachedNetworkImage(
+                imageUrl: unsplash.urls.regular,
+                placeholder: (context, url) => Center(child: CircularProgressIndicator()),
+              ),
               SafeArea(
                   child: Row(
                 children: [
@@ -35,7 +39,7 @@ class DetailScreen extends StatelessWidget {
             child: Row(
               children: [
                 CircleAvatar(
-                  backgroundImage: NetworkImage(unsplash.user.profileImage.medium),
+                  backgroundImage: CachedNetworkImageProvider(unsplash.user.profileImage.medium),
                   radius: 28,
                 ),
                 Padding(
@@ -95,7 +99,7 @@ class DetailScreen extends StatelessWidget {
                       image: DecorationImage(
                           fit: BoxFit.cover,
                           alignment: FractionalOffset.center,
-                          image: NetworkImage(e.urls.regular))),
+                          image: CachedNetworkImageProvider(e.urls.regular))),
                 ),
               );
             }).toList(),
