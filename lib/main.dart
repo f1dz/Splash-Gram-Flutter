@@ -9,6 +9,11 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: 'Splash Gram', theme: ThemeData.dark(), home: MainScreen());
+    return MaterialApp(
+        title: 'Splash Gram',
+        theme: ThemeData.light(),
+        darkTheme: ThemeData.dark(),
+        themeMode: ThemeMode.system,
+        home: MainScreen());
   }
 }

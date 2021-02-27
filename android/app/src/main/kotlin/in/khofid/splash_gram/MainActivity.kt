@@ -1,4 +1,4 @@
-package in.khofid.splash_gram
+package `in`.khofid.splash_gram
 
 import io.flutter.embedding.android.FlutterActivity
 
