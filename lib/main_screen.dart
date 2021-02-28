@@ -70,9 +70,12 @@ class MainScreen extends StatelessWidget {
                               ],
                             ),
                           ),
-                          CachedNetworkImage(
-                            imageUrl: unsplash.urls.regular,
-                            placeholder: (context, url) => Center(child: CircularProgressIndicator()),
+                          Hero(
+                            tag: unsplash.id,
+                            child: CachedNetworkImage(
+                              imageUrl: unsplash.urls.regular,
+                              placeholder: (context, url) => Center(child: CircularProgressIndicator()),
+                            ),
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
