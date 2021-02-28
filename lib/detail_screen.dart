@@ -18,9 +18,12 @@ class DetailScreen extends StatelessWidget {
         children: [
           Stack(
             children: [
-              CachedNetworkImage(
-                imageUrl: unsplash.urls.regular,
-                placeholder: (context, url) => Center(child: CircularProgressIndicator()),
+              Hero(
+                tag: "image",
+                child: CachedNetworkImage(
+                  imageUrl: unsplash.urls.regular,
+                  placeholder: (context, url) => Center(child: CircularProgressIndicator()),
+                ),
               ),
               SafeArea(
                   child: Row(
