@@ -6,4 +6,4 @@ Submission for [Belajar Membuat Aplikasi Flutter untuk Pemula](https://www.dicod
 
 Home Screen | Home Screen | Detail View
 :----------:|:-------------:|:--------:
-<img src="/assets/images/sc1.png" width=300/> | <img src="/assets/images/sc2.png" width=300/> | <img src="/assets/images/sc3.png" width=300/>
+<img src="/assets/images/sc1.png" width=300/> | <img src="/assets/images/sc3.png" width=300/> | <img src="/assets/images/sc2.png" width=300/>
