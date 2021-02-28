@@ -18,9 +18,12 @@ class DetailScreen extends StatelessWidget {
         children: [
           Stack(
             children: [
-              CachedNetworkImage(
-                imageUrl: unsplash.urls.regular,
-                placeholder: (context, url) => Center(child: CircularProgressIndicator()),
+              Hero(
+                tag: "image",
+                child: CachedNetworkImage(
+                  imageUrl: unsplash.urls.regular,
+                  placeholder: (context, url) => Center(child: CircularProgressIndicator()),
+                ),
               ),
               SafeArea(
                   child: Row(
@@ -31,7 +34,12 @@ class DetailScreen extends StatelessWidget {
                         Navigator.pop(context);
                       })
                 ],
-              ))
+              )),
+              Positioned(
+                child: FavoriteButton(),
+                right: 5,
+                bottom: 5,
+              )
             ],
           ),
           Padding(
@@ -103,9 +111,37 @@ class DetailScreen extends StatelessWidget {
                 ),
               );
             }).toList(),
-          ))
+          )),
         ],
       ),
+    );
+  }
+}
+
+class FavoriteButton extends StatefulWidget {
+  @override
+  _FavoriteButtonState createState() => _FavoriteButtonState();
+}
+
+class _FavoriteButtonState extends State<FavoriteButton> {
+  bool isFavorite = false;
+  @override
+  Widget build(BuildContext context) {
+    return FloatingActionButton(
+      backgroundColor: Colors.blue,
+      child: Icon(
+        isFavorite ? Icons.favorite : Icons.favorite_border,
+        color: Colors.pinkAccent,
+      ),
+      onPressed: () {
+        setState(() {
+          isFavorite = !isFavorite;
+        });
+        final snackBar = SnackBar(
+          content: Text(isFavorite ? 'Favorite' : 'Not Favorite'),
+        );
+        Scaffold.of(context).showSnackBar(snackBar);
+      },
     );
   }
 }

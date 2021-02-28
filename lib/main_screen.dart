@@ -7,12 +7,7 @@ import 'package:splash_gram/detail_screen.dart';
 
 import 'data/api.dart';
 
-class MainScreen extends StatefulWidget {
-  @override
-  _State createState() => _State();
-}
-
-class _State extends State<MainScreen> {
+class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
